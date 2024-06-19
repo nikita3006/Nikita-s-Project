@@ -1,13 +1,11 @@
-import { Box } from '@mui/material'
-import React from 'react'
+import React from "react";
+import Navbar from "./components/Navbar.jsx";
 
-function App(){
+function App() {
   return (
-    <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
-    <h1>
-      Hello
-    </h1>
-    </Box>
-  )
+    <>
+      <Navbar />
+    </>
+  );
 }
-export default App
+export default App;
