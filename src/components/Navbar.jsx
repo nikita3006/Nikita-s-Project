@@ -1,20 +1,15 @@
-import * as React from "react";
+import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
-import pic from "../assets/images/pic.jpg";
-
 import theme from "../theme/Theme.jsx";
 import { ThemeProvider } from "@mui/material";
 
@@ -25,10 +20,6 @@ function Navbar() {
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
@@ -45,9 +36,9 @@ function Navbar() {
           <Toolbar disableGutters>
             <img
               src={logo}
-              sx={{ display: { xs: "none", md: "flex" } }}
               alt="Logo"
               width="150px"
+              style={{ display: { xs: "none", md: "flex" } }}
             />
 
             {/* mobile view */}
@@ -82,19 +73,21 @@ function Navbar() {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Button
-                      sx={{
-                        color: "black",
-                        fontSize: "1rem",
-                        fontWeight: "500",
-                        "&:hover": {
-                          backgroundColor: "#26a69a",
-                          color: "white",
-                        },
-                      }}
-                    >
-                      {page}
-                    </Button>
+                    <Link to={page === "Home" ? "/" : `/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                      <Button
+                        sx={{
+                          color: "black",
+                          fontSize: "1rem",
+                          fontWeight: "500",
+                          "&:hover": {
+                            backgroundColor: "#26a69a",
+                            color: "white",
+                          },
+                        }}
+                      >
+                        {page}
+                      </Button>
+                    </Link>
                   </MenuItem>
                 ))}
               </Menu>
@@ -102,20 +95,21 @@ function Navbar() {
             {/* desktop view */}
             <Box sx={{ display: { xs: "none", md: "flex" }, ml: "auto" }}>
               {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    mx: 4,
-                    color: "white",
-                    fontSize: "1rem",
-                    fontWeight: "500",
-                    "&:hover": { backgroundColor: "#26a69a", color: "white" },
-                  }}
-                >
-                  {page}
-                </Button>
+                <Link to={page === "Home" ? "/" : `/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }} key={page}>
+                  <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      my: 2,
+                      mx: 4,
+                      color: "white",
+                      fontSize: "1rem",
+                      fontWeight: "500",
+                      "&:hover": { backgroundColor: "#26a69a", color: "white" },
+                    }}
+                  >
+                    {page}
+                  </Button>
+                </Link>
               ))}
             </Box>
           </Toolbar>
