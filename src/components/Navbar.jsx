@@ -13,17 +13,15 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import logo from "../assets/images/logo.png";
-import pic from '../assets/images/pic.jpg';
+import pic from "../assets/images/pic.jpg";
 
 import theme from "../theme/Theme.jsx";
 import { ThemeProvider } from "@mui/material";
 
 const pages = ["Home", "About", "Projects", "Testimonial"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,10 +35,6 @@ function Navbar() {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
   return (
     <ThemeProvider theme={theme}>
       <AppBar
@@ -51,12 +45,12 @@ function Navbar() {
           <Toolbar disableGutters>
             <img
               src={logo}
-              sx={{ display: { xs: "none", md: "flex" }, }}
+              sx={{ display: { xs: "none", md: "flex" } }}
               alt="Logo"
-              width="80px"
-              height="80px"
+              width="150px"
             />
 
+            {/* mobile view */}
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
@@ -88,79 +82,41 @@ function Navbar() {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography variant="body1" sx={{ color: "black" }}>
+                    <Button
+                      sx={{
+                        color: "black",
+                        fontSize: "1rem",
+                        fontWeight: "500",
+                        "&:hover": {
+                          backgroundColor: "#26a69a",
+                          color: "white",
+                        },
+                      }}
+                    >
                       {page}
-                    </Typography>
+                    </Button>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              LOGO
-            </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {/* desktop view */}
+            <Box sx={{ display: { xs: "none", md: "flex" }, ml: "auto" }}>
               {pages.map((page) => (
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{
                     my: 2,
-                   
-                    mx: 10,
-                    color: "black",
+                    mx: 4,
+                    color: "white",
                     fontSize: "1rem",
                     fontWeight: "500",
-                    "&:hover": { backgroundColor: "gray", color: "white" },
+                    "&:hover": { backgroundColor: "#26a69a", color: "white" },
                   }}
                 >
                   {page}
                 </Button>
               ))}
-            </Box>
-
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{  mr:2, }}>
-                  <Avatar alt="User Avatar" src={pic} />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography variant="body1">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
             </Box>
           </Toolbar>
         </Container>
