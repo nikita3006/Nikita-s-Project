@@ -42,7 +42,7 @@ function Navbar() {
             />
 
             {/* mobile view */}
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <Box sx={{  display: { xs: "flex", md: "none" },marginLeft:'10rem' }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -58,17 +58,21 @@ function Navbar() {
                 anchorEl={anchorElNav}
                 anchorOrigin={{
                   vertical: "bottom",
-                  horizontal: "left",
-                }}
+                  horizontal: "right",
+                
+                }
+                
+              }
                 keepMounted
                 transformOrigin={{
                   vertical: "top",
-                  horizontal: "left",
+                  horizontal: "right",
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
                   display: { xs: "block", md: "none" },
+                  color:"red"
                 }}
               >
                 {pages.map((page) => (
@@ -79,6 +83,7 @@ function Navbar() {
                           color: "black",
                           fontSize: "1rem",
                           fontWeight: "500",
+                          
                           "&:hover": {
                             backgroundColor: "#26a69a",
                             color: "white",
