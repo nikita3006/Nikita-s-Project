@@ -86,7 +86,7 @@ const Home = () => {
         </a>
       </Social>
       <Link to="contact">
-        <Button sx={{ color: "#26a69a" }}>Let's Connect</Button>
+        <Button sx={{ color: "#26a69a" }}>Hire Me</Button>
       </Link>
     </Container>
   );
