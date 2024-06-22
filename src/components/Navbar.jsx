@@ -42,7 +42,7 @@ function Navbar() {
             />
 
             {/* mobile view */}
-            <Box sx={{  display: { xs: "flex", md: "none" },marginLeft:'10rem' }}>
+            <Box sx={{  display: { xs: "flex", md: "none" },ml: "auto" }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"

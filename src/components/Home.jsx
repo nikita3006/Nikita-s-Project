@@ -15,63 +15,61 @@ const Home = () => {
     alignItems: "center",
     flexDirection: "column",
     letterSpacing: 1,
-    // padding: "0 1rem",
     "@media (max-width: 600px)": {
       marginTop: "4rem",
     },
   });
 
-  const IntroText = styled("span")({
-    marginRight: "0.75rem",
+  const IntroTextContainer = styled(Box)({
+    display: "flex",
+    alignItems: "center",
+   
+    justifyContent: "center",
+    textAlign: "center",
+    color: "white",
+    fontSize: "3rem",
+    "@media (max-width: 600px)": {
+      fontSize: "2rem",
+      flexDirection: "column",
+    },
+  });
+
+  const IntroText = styled("div")({
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
     letterSpacing: 1,
     textAlign: "center",
-
-    
     "@media (min-width: 320px)": {
-      marginTop: "-4rem",
-      marginRight: ".5rem",
-      padding: "1.5rem ",
+      padding: "1.5rem",
     },
     "@media (min-width: 375px)": {
-      marginRight: "2.5rem",
       padding: "1rem",
     },
     "& span": {
       color: "#26a69a",
-      marginRight: "0.75rem",
-    
     },
   });
 
   const OuterText = styled("span")({
     color: "#26a69a",
-   
-    "@media (min-width: 320px)": {
-      marginTop: "-2rem",
-      padding: "1rem",
-    },
-    "@media (min-width: 375px)": {
-      marginRight: "2rem",
-      padding: "1rem",
+    "@media (max-width: 600px)": {
+      display: "block",
+      marginTop: "0.5rem",
     },
   });
 
   const SubText = styled("div")({
     color: "white",
     padding: "2rem",
- 
+    textAlign: "center",
     "@media (max-width: 600px)": {
-      padding: "1rem",
+      padding: "2rem",
       fontSize: "1.2rem",
     },
-    "@media (min-width: 375px)": {
-      marginRight: "3rem",
-    },
-    "& h5": {
-      "@media (min-width: 375px)": {
-        fontSize: "1.2rem",
-      },
-    },
+   
   });
 
   const Social = styled("span")({
@@ -90,33 +88,23 @@ const Home = () => {
 
   return (
     <Container>
-      <Box
-        
-        sx={{
-          color: "white",
-          fontSize: "3rem",
-          "@media (max-width: 600px)": {
-            fontSize: "2rem",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          },
-        }}
-      >
+      <IntroTextContainer>
         <IntroText>
-          <span>Hello!</span>
-          <div>I'm Nikita Negi, a</div>
+          <span>Hello! </span>
+          <div style={{ display: "inline-block", marginLeft: "0.5rem" }}>
+            {" "}
+            I'm Nikita Negi a
+          </div>
         </IntroText>
         <OuterText>
           <TypeAnimation
-            sequence={["Developer", 9000, "Designer", 9000]}
+            sequence={["Developer", 5000, "Designer", 5000]}
             speed={50}
             wrapper="span"
             repeat={Infinity}
           />
         </OuterText>
-      </Box>
+      </IntroTextContainer>
       <SubText>
         <Typography variant="h5">
           <TypeAnimation
