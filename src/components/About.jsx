@@ -12,7 +12,7 @@ const About = () => {
     textAlign: "center",
     margin: "0 auto",
     padding: "20px",
-    marginTop:'5rem',
+    marginTop: "2.5rem",
 
     "& h6": {
       margin: "20px 30px",

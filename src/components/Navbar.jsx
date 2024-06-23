@@ -34,12 +34,14 @@ function Navbar() {
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <img
+          <Link to="home">
+          <img
               src={logo}
               alt="Logo"
               width="150px"
               style={{ display: { xs: "none", md: "flex" } }}
             />
+          </Link>
 
             {/* mobile view */}
             <Box sx={{  display: { xs: "flex", md: "none" },ml: "auto" }}>

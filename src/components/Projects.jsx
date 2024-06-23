@@ -12,7 +12,7 @@ const images = [img1, img7, img3, img4, img5];
 const Container = styled(Box)(({ theme }) => ({
   position: "relative",
   width: "70vw",
-  height: "70vh",
+  height: "65vh",
   margin: "0 auto",
   display: "flex",
   flexDirection: "column",

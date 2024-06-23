@@ -1,11 +1,10 @@
 import React from "react";
 import { Box, Typography, Card, Avatar } from "@mui/material";
-import img1 from "../assets/images/Img1.jpg";
+import comma from "../assets/images/comma.png";
 
 const Testimonial = () => {
   return (
     <Box
-      mt={4}
       sx={{
         display: "flex",
         justifyContent: "center",
@@ -19,9 +18,9 @@ const Testimonial = () => {
         sx={{
           color: "#26a69a",
           fontFamily: "Roboto",
-          padding: "5px 10px",
-          marginBottom: "1rem",
+          padding: "5px 5px",
           textAlign: "center",
+          marginTop: "-4rem",
         }}
       >
         Testimonials
@@ -29,45 +28,67 @@ const Testimonial = () => {
       <Card
         sx={{
           display: "flex",
-          maxWidth: 250,
+          maxWidth: 380,
           padding: 2,
           flexDirection: "column",
           marginTop: "2rem",
-          height: "250px",
+          height: "300px",
+          backgroundColor: "whitesmoke",
+          border: "0px solid black",
+          boxShadow: "9px 11px 3px 0px rgba(0, 0, 0, 0.2)",
+          borderRadius: "25px",
         }}
       >
-        <Typography variant="body2" color="text.secondary" mb={2}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          convallis libero id urna fringilla, vel ultricies erat scelerisque.
-          Fusce ut ipsum elit. Sed dapibus urna eu tellus posuere, et volutpat
-          mauris congue. Aliquam sed ullamcorper dolor.
-          ipsum elit. Sed dapibus urna eu tellus posuere, 
-        </Typography>
         <Box
           sx={{
-            display: "flex",
-           
+            width: "10px",
+            height: "10px",
+            // border: "1px solid red",
+            position: "relative",
+            overflow: "hidden",
+            padding: "0.50rem",
           }}
         >
-          <Avatar
-            src={img1}
-            alt="testimonial"
-            sx={{
-              width: 50,
-              height: 50,
-              marginRight: 2,
-              borderRadius: "50%",
+          <img
+            src={comma}
+            alt="comma"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
             }}
           />
+        </Box>
+        <Typography
+          sx={{ fontSize: "19px", fontFamily: "Roboto", textAlign: "center" }}
+        >
+          I will suggest Nikita to anyone who is looking for a dedicated and
+          disciplined Front end developer. She is a hard working, well mannered
+          and committed girl who can be a great asset to any team. She
+          understands the application needs very well and starts developing the
+          application in a professional way. I suggest any one who is looking
+          for a front end developer to go with her.
+        </Typography>
+        <Box>
           <Typography
             component="span"
             sx={{
               display: "flex",
-              justifyContent: "center",
+              flexDirection: "column",
               alignItems: "center",
+              textAlign: "center",
+              marginTop: "10px",
+              color: "#26a69a",
             }}
           >
-            John Doe
+            <span>Harsh Kumar</span>
+            <Typography component="div" sx={{ fontSize: "10px" }}>
+              SEO Analyst GeeksforGeeks
+            </Typography>
           </Typography>
         </Box>
       </Card>
