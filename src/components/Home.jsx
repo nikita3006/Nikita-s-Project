@@ -23,7 +23,6 @@ const Home = () => {
   const IntroTextContainer = styled(Box)({
     display: "flex",
     alignItems: "center",
-   
     justifyContent: "center",
     textAlign: "center",
     color: "white",
@@ -69,7 +68,6 @@ const Home = () => {
       padding: "2rem",
       fontSize: "1.2rem",
     },
-   
   });
 
   const Social = styled("span")({
