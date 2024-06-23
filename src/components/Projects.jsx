@@ -13,19 +13,24 @@ const Container = styled(Box)(({ theme }) => ({
   position: "relative",
   width: "70vw",
   height: "70vh",
-
   margin: "0 auto",
-
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
+
+  "@media (max-width: 600px)": {
+    height: "40vh",
+  },
+  "@media (max-width: 320px)": {
+    height: "30vh",
+  },
 }));
 
 const ImageDiv = styled(Box)(({ theme }) => ({
   width: "100%",
   height: "100%",
-  backgroundImage: `url(${images[0]})`, // Initially show the first image
+  backgroundImage: `url(${images[0]})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   zIndex: 2,
@@ -40,10 +45,15 @@ const BackgroundDiv = styled(Box)(({ theme }) => ({
   top: 35,
   bottom: 10,
   left: 45,
-  backgroundColor: "rgba(255, 255, 255, 0.5)",
+  backgroundColor: "whitesmoke",
   display: "flex",
   justifyContent: "flex-end",
   alignItems: "flex-end",
+  "@media (max-width: 600px)": {
+    top: 35,
+    bottom: 0,
+    left: 30,
+  },
 }));
 
 const DotContainer = styled(Box)(({ theme }) => ({
@@ -54,6 +64,10 @@ const DotContainer = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   alignItems: "flex-end",
   zIndex: 10,
+  "@media (max-width: 320px)": {
+    right: 12,
+    bottom: 30,
+  },
 }));
 
 const Dot = styled(Box)(({ theme, isActive }) => ({
@@ -63,6 +77,10 @@ const Dot = styled(Box)(({ theme, isActive }) => ({
   backgroundColor: isActive ? "#26a69a" : "#ccc",
   margin: "5px 0",
   cursor: "pointer",
+  "@media (min-width: 300px)": {
+    width: "8px",
+    height: "8px",
+  },
 }));
 
 const Projects = () => {
