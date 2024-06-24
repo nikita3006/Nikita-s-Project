@@ -13,7 +13,7 @@ import logo from "../assets/images/logo.png";
 import theme from "../theme/Theme.jsx";
 import { ThemeProvider } from "@mui/material";
 
-const pages = ["Home", "About", "Projects", "Testimonial"];
+const pages = ["Home", "About", "Projects", "Workflow"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

@@ -10,6 +10,7 @@ import "./index.css";
 import WorkFlow from "./components/WorkFlow.jsx";
 import Contact from "./components/Contact.jsx";
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -19,7 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="home" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="projects" element={<Projects />} />
-          <Route path="testimonial" element={<Testimonial />} />
+          <Route path="workflow" element={<WorkFlow />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

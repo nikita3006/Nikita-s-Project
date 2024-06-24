@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, TextField, Button, Typography, IconButton } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Button,
+  Typography,
+  IconButton,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -9,6 +17,9 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 const ContactUs = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box
       display="flex"
@@ -16,6 +27,7 @@ const ContactUs = () => {
       justifyContent="center"
       alignItems="center"
       height="100vh"
+      padding={2}
     >
       <Typography
         variant="h3"
@@ -28,8 +40,7 @@ const ContactUs = () => {
         Contact Me
       </Typography>
       <Box
-        width={500}
-        height="50vh"
+        width={{ xs: "100%", sm: 500 }}
         bgcolor="white"
         boxShadow={3}
         borderRadius={2}
@@ -38,14 +49,15 @@ const ContactUs = () => {
       >
         <Box
           display="flex"
-          flexDirection={{ xs: "column", md: "row" }}
+          flexDirection={isSmallScreen ? "column" : "row"}
           height="100%"
+          flexWrap={isSmallScreen ? "wrap" : "nowrap"}
         >
           <Box flex={1} bgcolor="#000000" padding={3}>
             <Typography
               variant="h6"
               gutterBottom
-              sx={{ color: " #26a69a" }}
+              sx={{ color: "#26a69a" }}
               mb={2}
             >
               Let's get in touch
@@ -54,14 +66,10 @@ const ContactUs = () => {
               display="flex"
               alignItems="center"
               marginBottom={2}
-              sx={{ color: " #26a69a" }}
+              sx={{ color: "#26a69a" }}
             >
               <EmailIcon />
-              <Typography
-                marginLeft={1}
-                variant="body2"
-                sx={{ color: " #26a69a" }}
-              >
+              <Typography marginLeft={1} variant="body2">
                 nikitanegi3011@gmail.com
               </Typography>
             </Box>
@@ -69,14 +77,10 @@ const ContactUs = () => {
               display="flex"
               alignItems="center"
               marginBottom={2}
-              sx={{ color: " #26a69a" }}
+              sx={{ color: "#26a69a" }}
             >
               <LocationOnIcon />
-              <Typography
-                marginLeft={1}
-                variant="body2"
-                sx={{ color: " #26a69a" }}
-              >
+              <Typography marginLeft={1} variant="body2">
                 Uttarakhand, India
               </Typography>
             </Box>
@@ -84,30 +88,39 @@ const ContactUs = () => {
               display="flex"
               alignItems="center"
               marginBottom={2}
-              sx={{ color: " #26a69a" }}
+              sx={{ color: "#26a69a" }}
             >
               <PhoneIcon />
-              <Typography
-                marginLeft={1}
-                variant="body2"
-                sx={{ color: " #26a69a" }}
-              >
+              <Typography marginLeft={1} variant="body2">
                 +91 7248464914
               </Typography>
             </Box>
 
-            <Box mt={8}>
-              <IconButton sx={{ color: "white" }} size="small">
-                <LinkedInIcon />
+            <Box
+              mt={8}
+              display="flex"
+              justifyContent="space-between"
+              maxWidth={200}
+            >
+              <IconButton>
+                <a href="https://www.linkedin.com/in/nikitanegi3011/">
+                  <LinkedInIcon sx={{ color: "white" }} />
+                </a>
               </IconButton>
-              <IconButton sx={{ color: "white" }} size="small">
-                <GitHubIcon />
+              <IconButton>
+                <a href="https://github.com/nikita3006">
+                  <GitHubIcon sx={{ color: "white" }} />
+                </a>
               </IconButton>
-              <IconButton sx={{ color: "white" }} size="small">
-                <TwitterIcon />
+              <IconButton>
+                <a href="https://twitter.com/nikitanegi3011">
+                  <TwitterIcon sx={{ color: "white" }} />
+                </a>
               </IconButton>
-              <IconButton sx={{ color: "white" }} size="small">
-                <InstagramIcon />
+              <IconButton>
+                <a href="https://www.instagram.com/nikitanegi3011/">
+                  <InstagramIcon sx={{ color: "white" }} />
+                </a>
               </IconButton>
             </Box>
           </Box>

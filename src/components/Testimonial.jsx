@@ -32,7 +32,7 @@ const Testimonial = () => {
           padding: 2,
           flexDirection: "column",
           marginTop: "2rem",
-          height: "300px",
+          height: "320px",
           backgroundColor: "whitesmoke",
           border: "0px solid black",
           boxShadow: "9px 11px 3px 0px rgba(0, 0, 0, 0.2)",
