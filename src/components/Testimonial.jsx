@@ -21,6 +21,9 @@ const Testimonial = () => {
           padding: "5px 5px",
           textAlign: "center",
           marginTop: "-4rem",
+          "@media (max-width: 600px)": {
+            marginTop: "0rem",
+          },
         }}
       >
         Testimonials

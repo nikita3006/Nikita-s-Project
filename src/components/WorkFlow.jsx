@@ -139,6 +139,9 @@ const WorkFlow = () => {
           color: "#26a69a",
           fontFamily: "Roboto",
           textAlign: "center",
+          "@media (max-width: 600px)": {
+            marginTop: "0rem",
+          },
         }}
       >
         My WorkFlow
