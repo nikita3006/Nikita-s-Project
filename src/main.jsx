@@ -10,6 +10,7 @@ import "./index.css";
 import WorkFlow from "./components/WorkFlow.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
+import SkillsSection from "./components/Skills.jsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -17,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Routes>
       <Route path="/" element={<App />}>
-          <Route index element={<><Home /><About /><Projects /><WorkFlow/><Testimonial/><Contact/><Footer/></>} />
+          <Route index element={<><Home /><About /><SkillsSection/><Projects /><WorkFlow/><Testimonial/><Contact/><Footer/></>} />
           <Route path="home" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="projects" element={<Projects />} />
