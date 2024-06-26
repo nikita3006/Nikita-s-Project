@@ -18,13 +18,23 @@ const Footer = () => {
           </Typography>
           <Typography variant="body1" gutterBottom>
             <Link
-              href="/portfolio"
+              href="/experience"
               color="inherit"
               sx={{ textDecoration: "none" }}
             >
               My Experience
             </Link>
           </Typography>
+          <Typography variant="body1" gutterBottom>
+            <Link
+              href="/projects"
+              color="inherit"
+              sx={{ textDecoration: "none" }}
+            >
+             Projects
+            </Link>
+          </Typography>
+         
           <Typography variant="body1" gutterBottom>
             <Link
               href="/contact"
